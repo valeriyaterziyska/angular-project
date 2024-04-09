@@ -1,0 +1,15 @@
+nav {
+    background: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+nav > ul {
+    text-align: center;
+    margin: 0 5px;
+    color: white;
+}
