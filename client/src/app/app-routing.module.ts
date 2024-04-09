@@ -5,15 +5,19 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
-import { CarItemComponent } from './car-item/car-item.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { CarItemDetailsComponent } from './car-item-details/car-item-details.component';
+import { CarItemEditComponent } from './car-item-edit/car-item-edit.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'catalog', component: CatalogComponent},
-  {path: 'catalog/1', component: CarItemComponent},
+  {path: 'car-item-details', component: CarItemDetailsComponent},
+  {path: 'car-item-edit', component: CarItemEditComponent},
   {path: 'add-car', component: AddCarComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
+  {path: '**', component: ErrorPageComponent}
 ];
 
 @NgModule({

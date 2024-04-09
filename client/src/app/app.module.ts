@@ -12,6 +12,9 @@ import { UserModule } from './user/user.module';
 import { CarItemComponent } from './car-item/car-item.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { CarItemEditComponent } from './car-item-edit/car-item-edit.component';
+import { CarItemDetailsComponent } from './car-item-details/car-item-details.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     CatalogComponent,
     AddCarComponent,
     CarItemComponent,
+    ErrorPageComponent,
+    CarItemEditComponent,
+    CarItemDetailsComponent,
   ],
   imports: [
     BrowserModule,
