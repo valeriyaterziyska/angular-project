@@ -1,11 +1,3 @@
-/* .background-img {
-    opacity: 0.6;
-    background: transparent;
-    background-image: url("../../assets/img/welcome-banner.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
-
 .introduction {
     text-align: left;
     width: 52%;
@@ -15,14 +7,14 @@
 }
 
 .introduction h1 {
-    color: rgb(163, 31, 31);
+    color: rgb(31, 19, 19);
     letter-spacing: 5px;
     font-size: 50px;
     text-align: center;
 }
 
 .introduction p {
-    color: rgb(157, 25, 25);
+    color: rgb(31, 19, 19);
     font-size: 20px;
     text-align: center;
 }

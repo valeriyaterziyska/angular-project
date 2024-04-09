@@ -5,6 +5,9 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 0;
+    background-image: url("./assets/img/pexels-jeshootscom-451590.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 * {
@@ -40,6 +43,7 @@ img {
     width: 35px;
     height: 35px;
     margin-top: 25px;
+    opacity: 0.8;
 }
 
 h2 {

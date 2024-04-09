@@ -9,7 +9,6 @@ import { HomeComponent } from './home/home.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { UserModule } from './user/user.module';
-import { CarItemComponent } from './car-item/car-item.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorPageComponent } from './error-page/error-page.component';
@@ -24,7 +23,6 @@ import { CarItemDetailsComponent } from './car-item-details/car-item-details.com
     HomeComponent,
     CatalogComponent,
     AddCarComponent,
-    CarItemComponent,
     ErrorPageComponent,
     CarItemEditComponent,
     CarItemDetailsComponent,
