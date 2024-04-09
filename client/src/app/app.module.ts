@@ -10,6 +10,8 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { UserModule } from './user/user.module';
 import { CarItemComponent } from './car-item/car-item.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { CarItemComponent } from './car-item/car-item.component';
     HomeComponent,
     CatalogComponent,
     AddCarComponent,
-    CarItemComponent
+    CarItemComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserModule
+    UserModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

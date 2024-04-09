@@ -22,16 +22,20 @@
   font-weight: bold;
 }
 
-#registerForm input {
+#registerForm input, button {
   background: white;
   border: 1px solid black;
   border-radius: 10px;
   font-size: 16px;
 }
 
-#registerForm input[type="submit"] {
+#registerForm button[type="submit"] {
   margin-top: 5%;
   margin-bottom: 5%;
   width: 40%;
   font-size: 20px;
+}
+
+.error-message {
+  color: red;
 }

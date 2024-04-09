@@ -1,17 +1,55 @@
 <section id="registerPage">
-    <form id='registerForm' action="#" method="">
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="" placeholder="Email">
+  <form
+    id="registerForm"
+    #registerForm="ngForm"
+    (ngSubmit)="formSubmitHandler(registerForm)"
+  >
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="Email"
+        ngModel
+        required
+        email
+        #emailInput="ngModel"
+        autocomplete="email"
+      />
+    </div>
+    <div *ngIf="emailInput.touched">
+      <div *ngIf="emailInput.errors?.['required']" class="error-message">
+        Email is required!
+      </div>
+      <div *ngIf="emailInput.errors?.['email']" class="error-message">
+        Email is invalid!
+      </div>
+    </div>
 
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="" placeholder="Enter your Username">
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+        ngModel
+        required
+        [appMinCount]="4"
+        #passwordInput="ngModel"
+        autocomplete="new-password"
+      />
+    </div>
+    <div *ngIf="passwordInput.touched">
+      <div *ngIf="passwordInput.errors?.['required']" class="error-message">
+        Password is required!
+      </div>
+      <div *ngIf="passwordInput.errors?.['appMinCount']" class="error-message">
+        Password is shoter than {{passwordInput.errors?.['appMinCount']}}
+      </div>
+    </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="" placeholder="Password">
-
-        <label for="rePassword">Repeat Password:</label>
-        <input type="password" id="rePassword" name="" placeholder="Repeat Password">
-
-        <input type="submit" class="register" value="Register">
-    </form>
+    <button type="submit" class="register">Register</button>
+  </form>
 </section>
