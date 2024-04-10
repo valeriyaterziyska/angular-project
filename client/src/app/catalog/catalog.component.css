@@ -56,11 +56,11 @@ h3 {
 .show-cars {
     padding: 10px;
     border-radius: 10px;
-    background-color: #a1cda1;
+    background-color: #ffffff;
     font-size: large;
 }
 
 .show-cars:hover {
-    background-color: rgb(229, 110, 152);
+    background-color: rgba(135, 184, 150, 0.75);
     cursor: pointer;
 }
