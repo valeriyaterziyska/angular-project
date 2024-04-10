@@ -17,7 +17,7 @@ export class AppHttpInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    console.log('interceptor', request.urlWithParams);
+    // console.log('interceptor', request.urlWithParams);
 
     return next.handle(request).pipe(
       // filter(
@@ -26,7 +26,7 @@ export class AppHttpInterceptor implements HttpInterceptor {
       // ),
       tap((req) => {
         if(req instanceof HttpResponse && request.url.includes('login')) {
-          console.log(req);
+          // console.log(req);
           const userData = JSON.stringify({accessToken: req.body.accessToken, _id: req.body._id});
           sessionStorage.setItem('userData', userData);
         }

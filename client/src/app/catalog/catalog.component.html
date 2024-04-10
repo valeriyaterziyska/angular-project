@@ -1,17 +1,21 @@
 <section id="viewCatalog" class="background-img">
     <!--If there are one or more cars-->
-    <div class="added-cars">
-        
-        <div class="added-cars-in-market">
-            <img src="../../assets/img/ncm1.png" class="picture-added-cars" (click)="navigateToDetails('id')">
-            <h3>Chevrolet Camaro</h3> <!-- Merge Brand and model -->
-            <span>Price per day: $153</span>
+    <div *ngIf="emptyCatalog !== true">
+        <div *ngFor="let car of cars" class="added-cars">
+            
+            <div class="added-cars-in-market">
+                <img src={{car.imagUrl}} class="picture-added-cars" (click)="navigateToDetails(car._id)">
+                <h3>{{car.brand}} {{car.model}}</h3> <!-- Merge Brand and model -->
+                <span>Price per day: ${{car.price}}</span>
+            </div>
+
         </div>
-        
     </div>
 
     <!--If there are no cars in catalog yet-->
-    <!-- <div class="guest">
-        There are no cars found...
-    </div> -->
+    <div *ngIf="emptyCatalog === true">
+        <div class="guest">
+            There are no cars found...
+        </div>
+    </div>
 </section>

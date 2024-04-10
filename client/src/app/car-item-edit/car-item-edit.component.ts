@@ -42,7 +42,6 @@ export class CarItemEditComponent implements OnInit {
     console.log(newCar);
 
     this.carService.createCar(newCar).subscribe((car) => {
-      //TODO: subscribe doesn't working properly
       console.log('id newCar:', car);
       this.router.navigate(['/catalog']);
     });

@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CarServiceService } from '../car-service.service';
 import { Router } from '@angular/router';
+import { CarData } from '../types/car-data';
 
 @Component({
   selector: 'app-catalog',
@@ -8,11 +9,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./catalog.component.css'],
 })
 export class CatalogComponent implements AfterViewInit {
+  public cars: CarData[] = [];
+  public emptyCatalog: boolean = true;
   constructor(private carService: CarServiceService, private router: Router) {}
 
   ngAfterViewInit(): void {
     this.carService.getAllCars().forEach((car) => {
-      console.log(car);
+      Object.entries(car).map((c) => {
+        console.log(c[1]);
+        this.cars.push(c[1]);
+        this.emptyCatalog = false;
+      });
     });
   }
 

@@ -1,14 +1,27 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CarServiceService } from '../car-service.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-car-item-details',
   templateUrl: './car-item-details.component.html',
   styleUrls: ['./car-item-details.component.css'],
 })
-export class CarItemDetailsComponent {
-  constructor(private carService: CarServiceService,private router: Router) {}
+export class CarItemDetailsComponent implements OnInit {
+  public id = this.route.snapshot.paramMap.get('id');
+
+  constructor(private carService: CarServiceService,private router: Router, private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    console.log('id edit page: ', this.id);
+    // this.carService.getSingleCar(this.id)
+   
+    // const car = this.carService.getSingleCar(id);
+    // console.log("signel car", car);
+    
+  }
+  
 
   navigateToCar(id: string): void {
     this.router.navigateByUrl(`/car-item-edit/${id}`);
