@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { CarItemEditComponent } from './car-item-edit/car-item-edit.component';
 import { CarItemDetailsComponent } from './car-item-details/car-item-details.component';
+import { appHttpInterceptorProvider } from './app-http.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { CarItemDetailsComponent } from './car-item-details/car-item-details.com
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [appHttpInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

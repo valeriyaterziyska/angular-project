@@ -11,17 +11,18 @@ export class UserServiceService {
   private headers = {'Content-Type': 'application/json'};
   constructor(private http: HttpClient ) { }
 
-  // getUsers() {
-  //   return this.http.get<User[]>(this.API);
-  // }
-
   getOneUser(email: string, password: string): Observable<UserData> {
-    return this.http.post<UserData>(`${this.API}/register`, {
+    return this.http.post<UserData>(`${this.API}/login`, {
       "email": email,
       "password": password,
     }, {headers: this.headers});
   }
 
-  //TODO: All async + interfaces
+  registerOneUser(email: string, password: string): Observable<UserData> {
+    return this.http.post<UserData>(`${this.API}/register`, {
+      "email": email,
+      "password": password,
+    }, {headers: this.headers});
+  }
 
 }
