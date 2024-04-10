@@ -9,12 +9,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./car-item-details.component.css'],
 })
 export class CarItemDetailsComponent implements OnInit {
-  public id = this.route.snapshot.paramMap.get('id');
+  public id: string | null = this.route.snapshot.paramMap.get('id');
 
   constructor(private carService: CarServiceService,private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     console.log('id edit page: ', this.id);
+    // this.carService.getSingleCar(this.id)
     // this.carService.getSingleCar(this.id)
    
     // const car = this.carService.getSingleCar(id);
