@@ -43,8 +43,8 @@
 }
 
 .buttons {
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin-top: 20px;
+  margin-bottom: 20px;
   font-weight: bold;
 }
 
@@ -68,10 +68,17 @@
   color: black;
   margin-top: 5%;
   margin-bottom: 5%;
+  margin-right: 10px;
   width: 40%;
   font-size: 20px;
   background-color: white;
   border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
+  
+}
+
+.buttons a:hover {
+  background-color: rgba(75, 133, 167, 0.678);
+  transform: scale(1, 1.05);
 }
