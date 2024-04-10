@@ -91,7 +91,7 @@ footer {
     margin-top: 3%;
 }
 
-.added-electronics-in-market {
+.added-cars-in-market {
     color: white;
     cursor: pointer;
     width: 500px;
@@ -106,18 +106,18 @@ footer {
     height: 300px;
 }
 
-.picture-added-electronics {
+.picture-added-cars {
     width: 300px;
     height: 200px;
     border-radius: 50%;
 }
 
-.picture-added-electronics:hover {
+.picture-added-cars:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
 
-.added-electronics {
+.added-cars {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;

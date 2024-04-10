@@ -11,14 +11,12 @@ export class CarServiceService {
   private headers = { 'Content-Type': 'application/json' };
   constructor(private http: HttpClient) {}
 
-  getAllCars(): Observable<CarData> {
-    return this.http.get<CarData>(`${this.API}`);
+  getSingleCar(id: string): Observable<CarData> {
+    return this.http.get<CarData>(`${this.API}/${id}`);
   }
 
-  getSingleCar(id: string): Observable<CarData> {
-    return this.http.post<CarData>(`${this.API}/${id}`, {
-      "id": id,
-    }, {headers: this.headers});
+  getAllCars(): Observable<CarData> {
+    return this.http.get<CarData>(`${this.API}`);
   }
 
   createCar(brand: string, model: string, price: number, imagUrl: string): Observable<CarData> {

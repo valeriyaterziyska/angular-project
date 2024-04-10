@@ -4,4 +4,5 @@ export interface CarData {
     model: string,
     price: number,
     imagUrl: string,
+    testDrive: boolean,
 };
