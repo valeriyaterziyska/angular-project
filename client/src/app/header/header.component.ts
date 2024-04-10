@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserServiceService } from '../user/user-service.service';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  loggedUser$ = this.userService.getLoggedUser();
+  constructor(private userService: UserServiceService) {}
+
 
 }

@@ -1,12 +1,45 @@
 <section id="loginPage">
-    <form id='loginForm' action="#" method="">
-        <h2 >Login Form</h2>
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="" placeholder="Email">
+  <form
+    id="loginForm"
+    #loginForm="ngForm"
+    (ngSubmit)="formSubmitHandler(loginForm)"
+  >
+    <h2>Login Form</h2>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="Email..."
+        ngModel
+        required
+        email
+        #emailInput="ngModel"
+        autocomplete="email"
+      />
+    </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="" placeholder="Password">
 
-        <input type="submit" class="register" value="Login">
-    </form>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password..."
+        ngModel
+        required
+        #passwordInput="ngModel"
+        autocomplete="new-password"
+      />
+    </div>
+    <div *ngIf="passwordInput.touched">
+      <div *ngIf="passwordInput.errors?.['password']" class="error-message">
+        Password is invalid!
+      </div>
+    </div>
+
+    <input type="submit" class="register" value="Login" />
+  </form>
 </section>

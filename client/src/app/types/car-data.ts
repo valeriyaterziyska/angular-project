@@ -1,5 +1,5 @@
 export interface CarData {
-    id: string,
+    _id: string,
     brand: string,
     model: string,
     price: number,

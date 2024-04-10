@@ -15,17 +15,16 @@ export class CarServiceService {
     return this.http.get<CarData>(`${this.API}/${id}`);
   }
 
-  getAllCars(): Observable<CarData> {
-    return this.http.get<CarData>(`${this.API}`);
+  getAllCars(): Observable<CarData[]> {
+    return this.http.get<CarData[]>(`${this.API}`);
   }
 
-  createCar(brand: string, model: string, price: number, imagUrl: string): Observable<CarData> {
-    return this.http.post<CarData>(`${this.API}`, {
-      "brand": brand,
-      "model": model,
-      "price": price,
-      "imagUrl": imagUrl,
-    }, {headers: this.headers});
+  createCar({...newCar}): Observable<CarData> {
+    return this.http.post<CarData>(`${this.API}`, newCar, {headers: this.headers});
+  }
+
+  deleteCar(id: string){
+    return this.http.delete(`${this.API}/${id}`);
   }
 
 }

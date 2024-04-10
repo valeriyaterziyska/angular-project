@@ -1,15 +1,19 @@
 <nav>
-    <ul>
-        <!--For all users-->
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="catalog">Catalog</a></li>
-        <!--For loggin users-->
-        <li><a routerLink="add-car">Add Car</a></li>
-        <li><a routerLink="/">Logout</a></li>
-        <!--For guest user-->
-        <li><a routerLink="login">Login</a></li>
-        <li><a routerLink="register">Register</a></li>
+  <ul>
+    <!--For all users-->
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="catalog">Catalog</a></li>
+    <!--For loggin users-->
+    <ng-container *ngIf="loggedUser$ | async">
+      <li><a routerLink="add-car">Add Car</a></li>
+      <li><a routerLink="test-drive">Test Drive</a></li>
+      <li><a routerLink="/">Logout</a></li>
+    </ng-container>
 
-    </ul>
-
+    <!--For guest user-->
+    <ng-container *ngIf="!(loggedUser$ | async)">
+      <li><a routerLink="login">Login</a></li>
+      <li><a routerLink="register">Register</a></li>
+    </ng-container>
+  </ul>
 </nav>

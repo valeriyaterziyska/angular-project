@@ -9,12 +9,13 @@ import { HomeComponent } from './home/home.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { UserModule } from './user/user.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { CarItemEditComponent } from './car-item-edit/car-item-edit.component';
 import { CarItemDetailsComponent } from './car-item-details/car-item-details.component';
 import { appHttpInterceptorProvider } from './app-http.interceptor';
+import { TestDriveComponent } from './test-drive/test-drive.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { appHttpInterceptorProvider } from './app-http.interceptor';
     ErrorPageComponent,
     CarItemEditComponent,
     CarItemDetailsComponent,
+    TestDriveComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,7 @@ import { appHttpInterceptorProvider } from './app-http.interceptor';
     UserModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [appHttpInterceptorProvider],
   bootstrap: [AppComponent]

@@ -8,15 +8,17 @@ import { RegisterComponent } from './user/register/register.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { CarItemDetailsComponent } from './car-item-details/car-item-details.component';
 import { CarItemEditComponent } from './car-item-edit/car-item-edit.component';
+import { TestDriveComponent } from './test-drive/test-drive.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'catalog', component: CatalogComponent},
-  {path: 'car-item-details', component: CarItemDetailsComponent},
-  {path: 'car-item-edit', component: CarItemEditComponent},
+  {path: 'car-item-details/:id', component: CarItemDetailsComponent},
+  {path: 'car-item-edit/:id', component: CarItemEditComponent},
   {path: 'add-car', component: AddCarComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'test-drive', component: TestDriveComponent},
   {path: '**', component: ErrorPageComponent}
 ];
 

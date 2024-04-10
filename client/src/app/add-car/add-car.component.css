@@ -29,11 +29,15 @@
   font-size: 16px;
 }
 
-#createForm input[type="submit"] {
+#createForm button[type="submit"] {
   margin-top: 5%;
   margin-bottom: 5%;
   width: 40%;
   font-size: 20px;
+}
+
+#createForm button[type="submit"]:hover {
+  cursor: pointer;
 }
 
 input[type="number"]::-webkit-inner-spin-button,

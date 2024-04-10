@@ -1,18 +1,21 @@
 <section id="createPage">
-    <form id='createForm' action="#" method="">
-        <label for="brand">Brand:</label>
-        <input type="text" id="brand" name="brand" placeholder="Brand...">
+  <form id="createForm" [formGroup]="carForm" (ngSubmit)="submitForm()">
+    <label for="brand">Brand:</label>
+    <input type="text" id="brand" name="brand" placeholder="Brand..." formControlName="brand"/>
 
-        <label for="model">Model:</label>
-        <input type="text" id="model" name="model" placeholder="Model...">
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="model" placeholder="Model..." formControlName="model"/>
 
-        <label for="imageUrl">Image:</label>
-        <input type="text" id="imageUrl" name="imageUrl" placeholder="Image...">
+    <label for="imageUrl">Image:</label>
+    <input type="text" id="imageUrl" name="imageUrl" placeholder="Image..." formControlName="imageUrl"/>
 
-        <label for="price">Price:</label>
-        <input type="number" id="price" name="price" placeholder="Price...">
-               
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" placeholder="Price..." formControlName="price"/>
 
-        <input type="submit" class="create" value="Create Offer">
-    </form>
+    <label for="price">Test drive option:</label>
+    <input type="checkbox" id="testDrive" name="testDrive" formControlName="testDrive"/>
+
+
+    <button type="submit" class="create">Create Car</button>
+  </form>
 </section>
