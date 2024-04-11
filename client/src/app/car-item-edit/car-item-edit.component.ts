@@ -14,7 +14,6 @@ export class CarItemEditComponent implements OnInit {
   public id: string = this.route.snapshot.paramMap.get('id') || '';
   public car$: Observable<CarData> = this.carService.getSingleCar(this.id);
 
-
   carEditForm = new FormGroup({
     brand: new FormControl('', [Validators.required, Validators.minLength(3)]),
     model: new FormControl('', [Validators.required, Validators.minLength(2)]),
@@ -33,20 +32,20 @@ export class CarItemEditComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.car$.subscribe(car => {
-      let {brand, model, imageUrl, price, testDrive} = car;
-      console.log("on init edit car:", car);
-      this.carEditForm.patchValue({brand, model, imageUrl});
+    this.car$.subscribe((car) => {
+      let { brand, model, imageUrl } = car;
+      console.log('on init edit car:', car);
+      this.carEditForm.patchValue({ brand, model, imageUrl });
+      
     });
-    
-   
   }
 
   submitForm(): void {
     const newCar = this.carEditForm.value;
-    console.log("new car values", newCar);
+    
+    console.log('new car values', newCar);
 
-    this.carService.updateCar(this.id, newCar).subscribe((car) => {
+    this.carService.updateCar(this.id, {...newCar, _id: this.id}).subscribe((car) => {
       console.log('edited car:', car);
       this.router.navigate(['/catalog']);
     });

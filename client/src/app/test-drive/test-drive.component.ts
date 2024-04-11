@@ -17,7 +17,6 @@ export class TestDriveComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.carService.getAllCars().forEach((car) => {
       Object.entries(car).map((c) => {
-        console.log(c[1]);
         if(c[1].testDrive === true) {
           this.cars.push(c[1]);
           this.emptyCatalog = false;

@@ -12,7 +12,7 @@
         <div class="buttons" >
             <ng-container *ngIf="(loggedUser$ | async)">
 
-                <a class="buy-btn" (click)="addtoTestDrive()">Add to Test Drive Catalog</a>
+                <a class="buy-btn" (click)="addtoTestDrive()" *ngIf="!!(car.testDrive) == false">Add to Test Drive Catalog</a>
                 <a class="edit-btn" (click)="navigateToCar()" >Edit</a>
                 <a class="delete-btn" (click)="deleteCar()">Delete</a>
             </ng-container>

@@ -23,8 +23,8 @@ export class CarServiceService {
     return this.http.post<CarData>(`${this.API}`, newCar, {headers: this.headers});
   }
 
-  updateCar(id: string, {...newCar}): Observable<CarData> {
-    return this.http.put<CarData>(`${this.API}/${id}`, {...newCar, _id: id},);
+  updateCar(id: string, newCar: object): Observable<CarData> {
+    return this.http.put<CarData>(`${this.API}/${id}`, newCar);
   }
 
   deleteCar(id: string){

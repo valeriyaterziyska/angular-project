@@ -24,9 +24,9 @@ export class AddCarComponent {
 
   submitForm(): void {
     const newCar = this.carForm.value;
-    // if(this.carForm.value.testDrive === "") {
-    //   this.carForm.value.testDrive = false;
-    // }
+    if(!!this.carForm.value.testDrive) {
+      this.carForm.value.testDrive = false;
+    }
     console.log(newCar);
     
 

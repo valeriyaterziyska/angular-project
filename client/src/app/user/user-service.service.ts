@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { UserData } from '../types/user-data';
 import { User } from '../types/user';
+import { CarData } from '../types/car-data';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ export class UserServiceService {
   private API = 'http://localhost:3030/users';
   private headers = { 'Content-Type': 'application/json' };
 
-  private loggedUser = new BehaviorSubject<UserData | null> (null);
+  private loggedUser = new BehaviorSubject<UserData | null>(null);
 
   constructor(private http: HttpClient) {}
 
@@ -20,16 +21,18 @@ export class UserServiceService {
   }
 
   loginUser(email: string, password: string): Observable<UserData> {
-    return this.http.post<UserData>(
-      `${this.API}/login`,
-      {
-        email: email,
-        password: password,
-      },
-      {
-        headers: this.headers,
-      }
-    ).pipe(tap((user: UserData) => this.loggedUser.next(user)))
+    return this.http
+      .post<UserData>(
+        `${this.API}/login`,
+        {
+          email: email,
+          password: password,
+        },
+        {
+          headers: this.headers,
+        }
+      )
+      .pipe(tap((user: UserData) => this.loggedUser.next(user)));
   }
 
   logoutUser(): void {
