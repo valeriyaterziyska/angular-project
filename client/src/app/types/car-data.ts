@@ -3,6 +3,6 @@ export interface CarData {
     brand: string,
     model: string,
     price: number,
-    imagUrl: string,
+    imageUrl: string,
     testDrive: boolean,
 };

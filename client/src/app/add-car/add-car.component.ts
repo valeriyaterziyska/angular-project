@@ -17,13 +17,16 @@ export class AddCarComponent {
       Validators.minLength(10),
     ]),
     price: new FormControl('', [Validators.required, Validators.min(100)]),
-    testDrive: new FormControl(''),
+    testDrive: new FormControl(false),
   });
 
   constructor(private carService: CarServiceService, private router: Router) {}
 
   submitForm(): void {
     const newCar = this.carForm.value;
+    // if(this.carForm.value.testDrive === "") {
+    //   this.carForm.value.testDrive = false;
+    // }
     console.log(newCar);
     
 

@@ -1,20 +1,24 @@
 <section id="detailsPage">
-    <div id="detailsInfo">
-        <h1>Name: Laptop HP EliteBook 820 G4</h1>
-        <div class="info"><img src="../../assets/img/ncm1.png"></div>
+    <div id="detailsInfo" *ngIf="car$ | async as car">
+        <div class="info"><img src="{{car.imageUrl}}"></div>
 
         <div class="info">
-            <h3>Brand: Chevrolet</h3>
-            <h3>Model: 2020</h3>
-            <h2>Price: $300 000</h2>
+            <h3>Brand: {{car.brand}}</h3>
+            <h3>Model: {{car.model}}</h3>
+            <h2>Price per day: ${{car.price}}</h2>
         </div>
 
         <!--If there is user logged in-->
-        <div class="buttons">
+        <div class="buttons" >
+            <ng-container *ngIf="(loggedUser$ | async)">
 
-            <a class="buy-btn" (click)="addtoTestDrive('asdasd')">Add to Test Drive Catalog</a>
-            <a class="edit-btn" (click)="navigateToCar('')" >Edit</a>
-            <a class="delete-btn" (click)="deleteCar('asdasd')">Delete</a>
+                <a class="buy-btn" (click)="addtoTestDrive()">Add to Test Drive Catalog</a>
+                <a class="edit-btn" (click)="navigateToCar()" >Edit</a>
+                <a class="delete-btn" (click)="deleteCar()">Delete</a>
+            </ng-container>
+                
+            
+            <a class="back-btn" routerLink="/catalog">Back</a>
 
         </div>
     </div>

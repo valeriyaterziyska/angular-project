@@ -7,7 +7,7 @@
     <ng-container *ngIf="loggedUser$ | async">
       <li><a routerLink="add-car">Add Car</a></li>
       <li><a routerLink="test-drive">Test Drive</a></li>
-      <li><a routerLink="/">Logout</a></li>
+      <li><a (click)="logout()" routerLink="/">Logout</a></li>
     </ng-container>
 
     <!--For guest user-->

@@ -32,6 +32,11 @@ export class UserServiceService {
     ).pipe(tap((user: UserData) => this.loggedUser.next(user)))
   }
 
+  logoutUser(): void {
+    this.loggedUser.next(null);
+    sessionStorage.clear();
+  }
+
   registerUser(email: string, password: string): Observable<UserData> {
     return this.http.post<UserData>(
       `${this.API}/register`,

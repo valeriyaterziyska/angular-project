@@ -4,7 +4,7 @@
         <div *ngFor="let car of cars" class="added-cars">
             
             <div class="added-cars-in-market">
-                <img src={{car.imagUrl}} class="picture-added-cars" (click)="navigateToDetails(car._id)">
+                <img  class="picture-added-cars" src="{{car.imageUrl}}" (click)="navigateToDetails(car._id)">
                 <h3>{{car.brand}} {{car.model}}</h3> <!-- Merge Brand and model -->
                 <span>Price per day: ${{car.price}}</span>
             </div>

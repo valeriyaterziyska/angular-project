@@ -16,7 +16,6 @@ export class CatalogComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.carService.getAllCars().forEach((car) => {
       Object.entries(car).map((c) => {
-        console.log(c[1]);
         this.cars.push(c[1]);
         this.emptyCatalog = false;
       });

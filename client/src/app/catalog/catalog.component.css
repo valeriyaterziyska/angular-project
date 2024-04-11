@@ -21,7 +21,7 @@
 .picture-added-cars {
     width: 300px;
     height: 200px;
-    border-radius: 50%;
+    border-radius: 30%;
 }
 
 .picture-added-cars:hover {
